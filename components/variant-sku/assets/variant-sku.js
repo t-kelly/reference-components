@@ -10,14 +10,14 @@ class VariantSku extends HTMLElement {
   }
 
   handleVariantChange({ detail }) {
-    const { html, sectionId, variant } = detail
+    const { html, blockId, variant } = detail
 
     if (!variant) {
       this.textContent = ''
       return
     }
 
-    const skuSource = html.querySelector(`[data-section-id="${sectionId}"] variant-sku`)
+    const skuSource = html.querySelector(`[data-block-id="${blockId}"] variant-sku`)
 
     if (skuSource) {
       this.textContent = skuSource.textContent

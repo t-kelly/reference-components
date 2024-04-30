@@ -6,12 +6,12 @@ test('block-price', async ({ page }) => {
   await page.goto('/')
   await page.getByRole('link', { name: 'block-price' }).click()
   let el = await page.locator('block-price')
-  let sectionId = await el.getAttribute('data-section-id')
-  let data = { eventName: EVENTS.variantChange, options: { detail: { variant: {} } }, sectionId }
+  let blockId = await el.getAttribute('data-block-id')
+  let data = { eventName: EVENTS.variantChange, options: { detail: { variant: {} } }, blockId }
   // When
-  await page.evaluate(({ eventName, options, sectionId }) => {
+  await page.evaluate(({ eventName, options, blockId }) => {
     options.detail.html = new DOMParser().parseFromString(
-      `<block-price data-section-id="${sectionId}">
+      `<block-price data-block-id="${blockId}">
         <div class="block-price__container heading-font-stack h4">
           <span aria-hidden="true">$100<sup>00</sup></span>
           <span class="visually-hidden">$100.00</span>

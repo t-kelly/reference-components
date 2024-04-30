@@ -17,7 +17,7 @@ class BlockPrice extends HTMLElement {
       return
     }
 
-    const priceSource = html.querySelector(`block-price[data-section-id="${this.dataset.sectionId}"] div`)
+    const priceSource = html.querySelector(`block-price[data-block-id="${this.dataset.blockId}"] div`)
     const priceDestination = this.querySelector('div')
 
     if (priceSource && priceDestination) {

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "media": {
+      "type": "media"
+    }
+  },
+  "order": ["media"]
+}
